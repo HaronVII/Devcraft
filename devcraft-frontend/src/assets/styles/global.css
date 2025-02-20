@@ -1,0 +1,226 @@
+/* Глобальные стили */
+body {
+  margin: 0;
+  background: #121212;
+  color: #e0e0e0;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Главная страница (Home) */
+.home-container {
+  padding: 2rem;
+  min-height: 100vh;
+  max-width: 1920px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-title {
+  font-size: 3.5rem;
+  color: #00ff88;
+  margin: 2rem 0 1rem;
+  text-align: center;
+  text-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+.choose-direction {
+  font-size: 2rem;
+  margin: 1rem 0 3rem;
+  color: #ffffff;
+}
+
+/* Контейнер для карточек */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 0 2%;
+  width: 100%;
+}
+
+/* Стили карточек */
+.tech-card {
+  width: 180px;
+  height: 180px;
+  background: #1e1e1e;
+  border: 2px solid #00ff8855;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  will-change: transform;
+}
+
+.tech-card:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.2);
+  border-color: #00ff88;
+  z-index: 1000;
+}
+
+/* Специальный стиль для DevOps */
+.tech-card[data-tech="DevOps"] {
+  background: linear-gradient(45deg, #1e1e1e, #2a6041);
+}
+
+.status-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #00ff88;
+  color: #121212;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Страница DevOps */
+
+/* Стили для DevOps */
+.devops-container {
+  display: flex;
+  min-height: 100vh;
+  background: #121212;
+}
+
+/* Сайдбар */
+.sidebar-wrapper {
+  position: relative;
+  z-index: 1000;
+  flex-shrink: 0;
+}
+
+/* Основной контент */
+.devops-content {
+  flex-grow: 1;
+  padding: 40px;
+  transition: margin-left 0.3s;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-top: 30px;
+}
+
+.header-section h2 {
+  color: #00ff88;
+  font-size: 2.5rem;
+  text-shadow: 0 0 15px rgba(0,255,136,0.3);
+}
+
+.content-section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.description-box {
+  background: #1e1e1e;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0,255,136,0.1);
+}
+
+.tech-list {
+  columns: 2;
+  column-gap: 40px;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.tech-list li {
+  background: #2a2a2a;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  list-style: none;
+  transition: transform 0.3s;
+}
+
+.tech-list li:hover {
+  transform: translateX(10px);
+}
+
+/* Сайдбар */
+.sidebar-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  background: #2a2a2a;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+}
+
+/* Контент */
+.content-area {
+  margin-left: 300px;
+  padding: 40px;
+  transition: margin-left 0.3s;
+}
+
+.sidebar-closed .content-area {
+  margin-left: 50px;
+}
+
+/* Кнопка управления */
+.sidebar-toggle {
+  position: absolute;
+  top: 20px;
+  right: -50px;
+  background: #00ff88;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #121212;
+  font-weight: bold;
+}
+
+.content-area {
+  margin-left: 280px;
+  flex-grow: 1;
+  padding: 40px;
+  transition: margin-left 0.3s;
+}
+
+.top-centered-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+
+.description ul {
+  columns: 2;
+  column-gap: 40px;
+  padding: 0;
+}
+
+.description li {
+  margin: 10px 0;
+  color: #ccc;
+}
+
+/* Анимации */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (min-width: 1920px) {
+  .cards-container {
+    padding: 0 calc((100% - 1800px) / 2);
+  }
+}
