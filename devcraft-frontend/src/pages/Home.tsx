@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import TechCard from '../components/TechCard';
+import Chat from '../components/Chat';
 
 const Home = () => {
   const navigate = useNavigate();
   const directions = [
     'DevOps', 'Frontend', 'Backend', 
-    'Mobile', 'Data Science', 'Cyber Security',
-    
+    'Mobile', 'Data Science', 'Cyber Security'
   ];
 
   const handleNavigation = (tech: string) => {
@@ -27,12 +27,15 @@ const Home = () => {
       <div className="cards-container">
         {directions.map((direction) => (
           <TechCard
-            key={`${direction}-${Math.random()}`}
+            key={direction}
             tech={direction}
             onClick={() => handleNavigation(direction)}
           />
         ))}
       </div>
+      
+      {/* Добавляем компонент чата */}
+      <Chat />
     </motion.div>
   );
 };
